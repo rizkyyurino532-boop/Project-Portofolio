@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Base Layer & Reset Styles
+   ========================================================================== */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    overscroll-behavior: none;
+  }
+
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Sembunyikan scrollbar bawaan browser untuk tampilan bersih */
+::-webkit-scrollbar {
+  display: none;
+}
+

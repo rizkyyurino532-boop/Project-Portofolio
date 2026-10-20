@@ -1,0 +1,1269 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="web_standard" name="shell-type" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!-- Menghubungkan file CSS eksternal -->
+    <link href="style.css" rel="stylesheet" />
+    <!-- Tailwind CSS CDN & File JavaScript Eksternal -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="script.js"></script>
+  </head>
+  <body
+    class="bg-surface text-on-surface font-body-md text-body-md antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col justify-between"
+  >
+    <header class="fixed top-0 inset-x-0 z-50 pointer-events-none">
+      <div
+        class="h-24 max-w-6xl mx-auto px-6 flex items-center justify-center pointer-events-auto"
+      >
+        <div
+          class="flex items-center justify-between gap-space-lg bg-surface-container/70 backdrop-blur-xl border border-outline-variant/40 rounded-full px-space-md py-space-xs shadow-[0_20px_40px_-15px_rgba(0,0,0,0.7)]"
+        >
+          <a
+            class="flex items-center gap-space-sm pl-space-xs cursor-pointer group"
+            href="#about"
+            ><img
+              alt="Developer Monogram Logo"
+              class="h-8 w-auto object-contain transition-transform group-hover:scale-105"
+              src="https://lh3.googleusercontent.com/aida/AEtjO1UeauPq-_iHlmLs5KbXCO4lWMOl5YbIS_R3Klm6zU5lIzk7FKVoDcx3UBuxM1wGJB-iP-yyyH9ELL5DT8tWkLKwrg3v_xz4-6-tyLMOH2evoeRxMuCxLC7Fmccm2M3pgWWa6r09CRkkbyNjsaBj_JB-1KJWhRaAErQQN7xOG9ZV929Rd2nTaoySiW8UgRQ6-2iegxghOEb4xFnUNloyH3vj3k9iX38Rd4UZeUJW8Fxzjxl1_nyBfR3ONg"
+            /><span
+              class="font-headline-sm text-headline-sm text-on-surface hidden sm:inline-block tracking-tight group-hover:text-primary transition-colors"
+              >Portfolio</span
+            ></a
+          >
+          <nav
+            class="flex items-center gap-space-xs"
+            data-active-classes="bg-primary text-on-primary font-label-pill text-label-pill rounded-full"
+            id="navbar-links"
+          >
+            <a
+              aria-current="page"
+              class="nav-item px-space-md py-space-xs transition-colors bg-primary text-on-primary font-label-pill text-label-pill rounded-full cursor-pointer"
+              data-path="work"
+              href="#selected-works"
+              >Work</a
+            ><a
+              class="nav-item px-space-md py-space-xs rounded-full font-label-pill text-label-pill text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer"
+              data-path="about"
+              href="#about"
+              >About</a
+            ><a
+              class="nav-item px-space-md py-space-xs rounded-full font-label-pill text-label-pill text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer"
+              data-path="stack"
+              href="#stack"
+              >Stack</a
+            ><a
+              class="nav-item px-space-md py-space-xs rounded-full font-label-pill text-label-pill text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors cursor-pointer"
+              data-path="contact"
+              href="#contact"
+              >Contact</a
+            >
+          </nav>
+          <div class="flex items-center gap-space-xs pr-space-xs">
+            <a
+              class="rounded-full bg-primary-container text-on-primary-container font-label-pill text-label-pill px-space-md py-space-xs hover:bg-primary hover:text-on-primary transition-all shadow-[0_0_20px_rgba(128,131,255,0.35)] cursor-pointer"
+              data-path="hire-me"
+              href="#contact"
+              >Hire Me</a
+            ><a
+              class="w-8 h-8 rounded-full bg-primary flex items-center justify-center hover:opacity-90 transition-opacity cursor-pointer"
+              href="#about"
+              title="About Alex Vance"
+              ><span
+                class="material-symbols-outlined text-on-primary text-[18px]"
+                >person</span
+              ></a
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="w-full pt-24 max-w-6xl mx-auto px-6 py-12 flex-1">
+      <div class="flex flex-col w-full">
+        <!-- Top Ambient Glow Field -->
+        <div class="relative w-full overflow-hidden">
+          <div
+            class="absolute -top-32 -left-20 w-96 h-96 bg-primary-container/20 rounded-full blur-[110px] pointer-events-none"
+          ></div>
+          <div
+            class="absolute top-12 -right-24 w-80 h-80 bg-secondary/15 rounded-full blur-[100px] pointer-events-none"
+          ></div>
+          <!-- 1. HERO & ABOUT SECTION -->
+          <section
+            class="relative pt-6 pb-20 max-w-5xl scroll-mt-28"
+            id="about"
+          >
+            <!-- Status Pill Badge -->
+            <div
+              class="inline-flex items-center gap-space-sm px-4 py-1.5 rounded-full bg-secondary-container/20 shadow-inner mb-space-lg"
+            >
+              <span class="relative flex h-2.5 w-2.5">
+                <span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"
+                ></span>
+                <span
+                  class="relative inline-flex rounded-full h-2.5 w-2.5 bg-secondary"
+                ></span>
+              </span>
+              <span
+                class="font-label-pill text-label-pill text-secondary font-medium tracking-wide"
+                >Available for new projects</span
+              >
+            </div>
+            <!-- Main Headline -->
+            <h1
+              class="font-display text-display text-on-surface tracking-tight max-w-4xl mb-space-md"
+            >
+              Crafting digital experiences at the intersection of
+              <span
+                class="bg-gradient-to-r from-primary via-primary-fixed-dim to-secondary bg-clip-text text-transparent"
+                >code &amp; interface design.</span
+              >
+            </h1>
+            <!-- Bio / Subtitle -->
+            <p
+              class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed mb-space-xl"
+            >
+              I am Alex Vance, bridging the gap between engineering rigor and
+              aesthetic finesse. Specializing in scalable full-stack web
+              applications, interactive design systems, and fluid digital
+              products for ambitious teams.
+            </p>
+            <!-- CTA Buttons & Terminal Metadata -->
+            <div class="flex flex-wrap items-center gap-space-md">
+              <a
+                class="group inline-flex items-center gap-space-sm px-7 py-3.5 rounded-full bg-primary-container text-on-primary-container font-label-pill text-label-pill font-semibold shadow-[0_0_24px_rgba(128,131,255,0.4)] hover:bg-primary hover:text-on-primary transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
+                href="#selected-works"
+              >
+                <span>View Selected Works</span>
+                <span
+                  class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform"
+                  >arrow_forward</span
+                >
+              </a>
+              <a
+                class="inline-flex items-center gap-space-sm px-6 py-3.5 rounded-full bg-surface-container-high text-on-surface font-label-pill text-label-pill hover:bg-surface-bright transition-all duration-200 shadow-sm cursor-pointer"
+                href="#contact"
+              >
+                <span class="material-symbols-outlined text-[18px] text-primary"
+                  >mail</span
+                >
+                <span>Get in Touch</span>
+              </a>
+              <a
+                class="inline-flex items-center gap-space-xs px-5 py-3.5 rounded-full bg-surface-container-low text-on-surface-variant hover:text-on-surface font-label-code text-label-code transition-colors cursor-pointer"
+                href="javascript:void(0)"
+                onclick="downloadResume()"
+              >
+                <span class="material-symbols-outlined text-[17px]"
+                  >download</span
+                >
+                <span>CV.pdf</span>
+              </a>
+            </div>
+            <!-- Live Metadata Strip -->
+            <div
+              class="mt-14 pt-8 flex flex-wrap items-center gap-x-8 gap-y-3 font-label-code text-label-code text-on-surface-variant/80"
+            >
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                <span>Full-Stack Lead &amp; Product Designer</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                <span>Based in San Francisco (UTC-7 / Remote)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                <span>Shipped to 420K+ Global MAUs</span>
+              </div>
+            </div>
+          </section>
+          <!-- 2. BENTO GRID SECTION -->
+          <section class="py-12">
+            <div class="flex items-end justify-between mb-8">
+              <div>
+                <span
+                  class="font-label-code text-label-code text-primary tracking-wider uppercase"
+                  >01 / ARCHITECTURE &amp; IMPACT</span
+                >
+                <h2
+                  class="font-headline-lg text-headline-lg text-on-surface mt-1"
+                >
+                  High-craft output across domains
+                </h2>
+              </div>
+              <span
+                class="hidden md:block font-label-code text-label-code text-on-surface-variant"
+                >Bento Portfolio Matrix v3.2</span
+              >
+            </div>
+            <!-- 3-Column / Asymmetric Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+              <!-- CARD 1: Featured Project: Synthetix AI (Wide 2-col) -->
+              <div
+                class="group md:col-span-2 rounded-lg bg-surface-container-low p-space-lg md:p-space-xl relative overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_-5px_rgba(128,131,255,0.2)]"
+              >
+                <div
+                  class="flex flex-col h-full justify-between gap-6 relative z-10"
+                >
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container font-label-code text-label-code text-primary mb-3"
+                      >
+                        <span>FEATURED CASE STUDY</span>
+                      </div>
+                      <h3
+                        class="font-headline-md text-headline-md text-on-surface"
+                      >
+                        Synthetix AI — Intelligent Multi-Modal Studio
+                      </h3>
+                      <p
+                        class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-lg"
+                      >
+                        Zero-latency generative workspace with collaborative
+                        canvas orchestration, unified model routing, and custom
+                        reactive shaders.
+                      </p>
+                    </div>
+                    <div
+                      class="px-3.5 py-1.5 rounded-full bg-secondary-container/20 text-secondary font-label-code text-label-code whitespace-nowrap self-start"
+                    >
+                      -45% Latency
+                    </div>
+                  </div>
+                  <!-- Interactive App Mockup Component Visual -->
+                  <div
+                    class="w-full bg-surface-container rounded-DEFAULT p-4 shadow-2xl relative overflow-hidden"
+                  >
+                    <div
+                      class="flex items-center justify-between pb-3 mb-3 bg-surface-container-high/50 -mx-4 -mt-4 px-4 pt-3"
+                    >
+                      <div class="flex items-center gap-1.5">
+                        <span
+                          class="w-2.5 h-2.5 rounded-full bg-error/70"
+                        ></span>
+                        <span
+                          class="w-2.5 h-2.5 rounded-full bg-tertiary/70"
+                        ></span>
+                        <span
+                          class="w-2.5 h-2.5 rounded-full bg-secondary/70"
+                        ></span>
+                        <span
+                          class="ml-2 font-label-code text-[11px] text-on-surface-variant"
+                          >synthetix.app/studio/agent-orchestrator</span
+                        >
+                      </div>
+                      <span class="font-label-code text-[11px] text-secondary"
+                        >● Realtime Sync</span
+                      >
+                    </div>
+                    <!-- Graphic Canvas Preview -->
+                    <div class="grid grid-cols-12 gap-3 items-center">
+                      <div class="col-span-8 space-y-2">
+                        <div
+                          class="h-3 bg-surface-container-highest rounded-full w-4/5"
+                        ></div>
+                        <div
+                          class="h-2.5 bg-surface-container-highest/60 rounded-full w-2/3"
+                        ></div>
+                        <div class="flex gap-2 pt-2">
+                          <div
+                            class="h-7 px-3 rounded-full bg-primary/20 text-primary font-label-code text-[11px] flex items-center"
+                          >
+                            Prompt Latency: 118ms
+                          </div>
+                          <div
+                            class="h-7 px-3 rounded-full bg-surface-container-highest text-on-surface-variant font-label-code text-[11px] flex items-center"
+                          >
+                            Tokens/sec: 142
+                          </div>
+                        </div>
+                      </div>
+                      <!-- Sparkline / Metric SVG -->
+                      <div class="col-span-4 flex justify-end">
+                        <svg
+                          class="w-28 h-12 text-secondary"
+                          fill="none"
+                          viewbox="0 0 120 40"
+                        >
+                          <path
+                            d="M0 32 L20 28 L40 18 L60 22 L80 8 L100 12 L120 2"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2.5"
+                          ></path>
+                          <path
+                            d="M0 32 L20 28 L40 18 L60 22 L80 8 L100 12 L120 2 L120 40 L0 40 Z"
+                            fill="currentColor"
+                            fill-opacity="0.12"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Tags & External CTA -->
+                  <div
+                    class="flex flex-wrap items-center justify-between gap-4 pt-2"
+                  >
+                    <div class="flex flex-wrap gap-2">
+                      <span
+                        class="px-2.5 py-1 rounded-full bg-surface-container-high font-label-code text-[11px] text-on-surface-variant"
+                        >Next.js 14</span
+                      >
+                      <span
+                        class="px-2.5 py-1 rounded-full bg-surface-container-high font-label-code text-[11px] text-on-surface-variant"
+                        >TypeScript</span
+                      >
+                      <span
+                        class="px-2.5 py-1 rounded-full bg-surface-container-high font-label-code text-[11px] text-on-surface-variant"
+                        >Tailwind</span
+                      >
+                      <span
+                        class="px-2.5 py-1 rounded-full bg-surface-container-high font-label-code text-[11px] text-on-surface-variant"
+                        >OpenAI API</span
+                      >
+                    </div>
+                    <a
+                      class="inline-flex items-center gap-1.5 font-label-pill text-label-pill text-primary hover:text-on-surface transition-colors cursor-pointer"
+                      href="#selected-works"
+                    >
+                      <span>Explore Live Product</span>
+                      <span class="material-symbols-outlined text-[16px]"
+                        >open_in_new</span
+                      >
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- CARD 2: Tech Stack & Tooling (Square 1-col) -->
+              <div
+                class="rounded-lg bg-surface-container-low p-space-lg flex flex-col justify-between transition-all duration-300 hover:shadow-[0_0_24px_-4px_rgba(128,131,255,0.15)] scroll-mt-28"
+                id="stack"
+              >
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <span class="font-label-code text-label-code text-primary"
+                      >CORE TOOLING</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-on-surface-variant text-[18px]"
+                      >terminal</span
+                    >
+                  </div>
+                  <h3 class="font-headline-sm text-headline-sm text-on-surface">
+                    Daily Engineering Stack
+                  </h3>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant mt-1"
+                  >
+                    High-velocity primitives for robust applications.
+                  </p>
+                </div>
+                <!-- 2x2 Clean Badges Grid -->
+                <div class="grid grid-cols-2 gap-3 my-4">
+                  <!-- React -->
+                  <div
+                    class="p-3.5 rounded-DEFAULT bg-surface-container flex flex-col justify-between group hover:bg-surface-container-high transition-colors"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="material-symbols-outlined text-primary text-[22px]"
+                        >code_blocks</span
+                      >
+                      <span
+                        class="font-label-code text-[10px] text-primary bg-primary/10 px-1.5 py-0.5 rounded"
+                        >v19</span
+                      >
+                    </div>
+                    <div class="mt-3">
+                      <span
+                        class="block font-headline-sm text-[15px] text-on-surface"
+                        >React / Next</span
+                      >
+                      <span
+                        class="font-label-code text-[11px] text-on-surface-variant"
+                        >Component Arch</span
+                      >
+                    </div>
+                  </div>
+                  <!-- TypeScript -->
+                  <div
+                    class="p-3.5 rounded-DEFAULT bg-surface-container flex flex-col justify-between group hover:bg-surface-container-high transition-colors"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="material-symbols-outlined text-primary-fixed-dim text-[22px]"
+                        >integration_instructions</span
+                      >
+                      <span
+                        class="font-label-code text-[10px] text-primary bg-primary/10 px-1.5 py-0.5 rounded"
+                        >Strict</span
+                      >
+                    </div>
+                    <div class="mt-3">
+                      <span
+                        class="block font-headline-sm text-[15px] text-on-surface"
+                        >TypeScript</span
+                      >
+                      <span
+                        class="font-label-code text-[11px] text-on-surface-variant"
+                        >Type Safety &amp; AST</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Figma -->
+                  <div
+                    class="p-3.5 rounded-DEFAULT bg-surface-container flex flex-col justify-between group hover:bg-surface-container-high transition-colors"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="material-symbols-outlined text-tertiary text-[22px]"
+                        >design_services</span
+                      >
+                      <span
+                        class="font-label-code text-[10px] text-tertiary bg-tertiary/10 px-1.5 py-0.5 rounded"
+                        >Pro</span
+                      >
+                    </div>
+                    <div class="mt-3">
+                      <span
+                        class="block font-headline-sm text-[15px] text-on-surface"
+                        >Figma Tokens</span
+                      >
+                      <span
+                        class="font-label-code text-[11px] text-on-surface-variant"
+                        >Variables &amp; Design Sys</span
+                      >
+                    </div>
+                  </div>
+                  <!-- Node.js / Go -->
+                  <div
+                    class="p-3.5 rounded-DEFAULT bg-surface-container flex flex-col justify-between group hover:bg-surface-container-high transition-colors"
+                  >
+                    <div class="flex items-center justify-between">
+                      <span
+                        class="material-symbols-outlined text-secondary text-[22px]"
+                        >dns</span
+                      >
+                      <span
+                        class="font-label-code text-[10px] text-secondary bg-secondary/10 px-1.5 py-0.5 rounded"
+                        >REST/RPC</span
+                      >
+                    </div>
+                    <div class="mt-3">
+                      <span
+                        class="block font-headline-sm text-[15px] text-on-surface"
+                        >Node &amp; Go</span
+                      >
+                      <span
+                        class="font-label-code text-[11px] text-on-surface-variant"
+                        >Distributed APIs</span
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="pt-2 font-label-code text-[11px] text-on-surface-variant/80 flex items-center justify-between"
+                >
+                  <span>Docker • Postgres • GraphQL • AWS</span>
+                  <span class="text-secondary font-semibold">100% CI/CD</span>
+                </div>
+              </div>
+              <!-- CARD 3: Experience & Impact (Square 1-col) -->
+              <div
+                class="rounded-lg bg-surface-container-low p-space-lg flex flex-col justify-between transition-all duration-300 hover:shadow-[0_0_24px_-4px_rgba(128,131,255,0.15)]"
+              >
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <span class="font-label-code text-label-code text-primary"
+                      >TRACK RECORD</span
+                    >
+                    <span
+                      class="material-symbols-outlined text-on-surface-variant text-[18px]"
+                      >verified</span
+                    >
+                  </div>
+                  <div class="mt-2">
+                    <div
+                      class="font-display text-[52px] leading-tight font-bold bg-gradient-to-r from-on-surface via-primary to-primary-container bg-clip-text text-transparent"
+                    >
+                      5+ Years
+                    </div>
+                    <p
+                      class="font-headline-sm text-[17px] text-on-surface mt-1"
+                    >
+                      Shipping Production Software
+                    </p>
+                    <p
+                      class="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed"
+                    >
+                      Zero fluff execution from early seed prototyping to
+                      enterprise-grade tier-1 reliability.
+                    </p>
+                  </div>
+                </div>
+                <!-- Impact Metrics -->
+                <div class="space-y-3 pt-6">
+                  <div
+                    class="p-3 rounded-DEFAULT bg-surface-container flex items-center justify-between"
+                  >
+                    <span
+                      class="font-body-md text-body-md text-on-surface-variant"
+                      >Web Apps Launched</span
+                    >
+                    <span
+                      class="font-headline-sm text-headline-sm text-on-surface font-mono"
+                      >24+</span
+                    >
+                  </div>
+                  <div
+                    class="p-3 rounded-DEFAULT bg-surface-container flex items-center justify-between"
+                  >
+                    <span
+                      class="font-body-md text-body-md text-on-surface-variant"
+                      >System Reliability SLA</span
+                    >
+                    <span
+                      class="font-headline-sm text-headline-sm text-secondary font-mono"
+                      >99.9%</span
+                    >
+                  </div>
+                  <div
+                    class="p-3 rounded-DEFAULT bg-surface-container flex items-center justify-between"
+                  >
+                    <span
+                      class="font-body-md text-body-md text-on-surface-variant"
+                      >Design System Adopters</span
+                    >
+                    <span
+                      class="font-headline-sm text-headline-sm text-tertiary font-mono"
+                      >85+ Eng</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- CARD 4: Interactive GitHub Contribution Pulse & Testimonial (Wide 2-col) -->
+              <div
+                class="md:col-span-2 rounded-lg bg-surface-container-low p-space-lg md:p-space-xl flex flex-col justify-between transition-all duration-300 hover:shadow-[0_0_30px_-5px_rgba(128,131,255,0.2)]"
+              >
+                <div>
+                  <div
+                    class="flex flex-wrap items-center justify-between gap-2 mb-4"
+                  >
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="material-symbols-outlined text-secondary text-[20px]"
+                        >commit</span
+                      >
+                      <span
+                        class="font-label-code text-label-code text-on-surface"
+                        >Interactive GitHub Contribution Pulse</span
+                      >
+                    </div>
+                    <span
+                      class="px-2.5 py-1 rounded-full bg-surface-container font-label-code text-[11px] text-secondary"
+                      >1,840+ commits in past 12 months</span
+                    >
+                  </div>
+                  <!-- Heat Map Visual (Generated SVG/CSS Matrix) -->
+                  <div
+                    class="p-3.5 bg-surface-container rounded-DEFAULT overflow-x-auto"
+                  >
+                    <div
+                      class="flex gap-1.5 items-center min-w-[500px]"
+                      id="heatmap-container"
+                    >
+                      <!-- 28 Dynamic visual week columns generated for high fidelity -->
+                      <div class="flex flex-col gap-1.5">
+                        <span
+                          class="w-3 h-3 rounded-sm bg-surface-container-high"
+                        ></span>
+                        <span class="w-3 h-3 rounded-sm bg-secondary/30"></span>
+                        <span class="w-3 h-3 rounded-sm bg-secondary/60"></span>
+                        <span class="w-3 h-3 rounded-sm bg-secondary"></span>
+                      </div>
+                      <div class="flex flex-col gap-1.5">
+                        <span
+                          class="w-3 h-3 rounded-sm bg-surface-container-high"
+                        ></span>
+                        <span class="w-3 h-3 rounded-sm bg-primary/40"></span>
+                        <span class="w-3 h-3 rounded-sm bg-primary/80"></span>
+                        <span class="w-3 h-3 rounded-sm bg-primary"></span>
+                      </div>
+                      <div class="flex flex-col gap-1.5">
+                        <span class="w-3 h-3 rounded-sm bg-secondary/20"></span>
+                        <span
+                          class="w-3 h-3 rounded-sm bg-surface-container-high"
+                        ></span>
+                        <span class="w-3 h-3 rounded-sm bg-secondary/70"></span>
+                        <span class="w-3 h-3 rounded-sm bg-secondary/90"></span>
+                      </div>
+                      <div class="flex flex-col gap-1.5">
+                        <span class="w-3 h-3 rounded-sm bg-primary/30"></span>
+                        <span class="w-3 h-3 rounded-sm bg-primary/70"></span>
+                        <span
+                          class="w-3 h-3 rounded-sm bg-surface-container-high"
+                        ></span>
+                        <span class="w-3 h-3 rounded-sm bg-primary"></span>
+                      </div>
+                      <div class="flex flex-col gap-1.5">
+                        <span class="w-3 h-3 rounded-sm bg-secondary/40"></span>
+                        <span class="w-3 h-3 rounded-sm bg-secondary/80"></span>
+                        <span class="w-3 h-3 rounded-sm bg-secondary"></span>
+                        <span class="w-3 h-3 rounded-sm bg-secondary/50"></span>
+                      </div>
+                      <div class="flex flex-col gap-1.5">
+                        <span
+                          class="w-3 h-3 rounded-sm bg-surface-container-high"
+                        ></span>
+                        <span class="w-3 h-3 rounded-sm bg-primary/50"></span>
+                        <span class="w-3 h-3 rounded-sm bg-primary/80"></span>
+                        <span class="w-3 h-3 rounded-sm bg-primary/20"></span>
+                      </div>
+                      <div class="flex flex-col gap-1.5">
+                        <span class="w-3 h-3 rounded-sm bg-secondary/30"></span>
+                        <span class="w-3 h-3 rounded-sm bg-secondary/90"></span>
+                        <span class="w-3 h-3 rounded-sm bg-secondary/70"></span>
+                        <span
+                          class="w-3 h-3 rounded-sm bg-surface-container-high"
+                        ></span>
+                      </div>
+                      <div class="flex flex-col gap-1.5">
+                        <span class="w-3 h-3 rounded-sm bg-primary/40"></span>
+                        <span class="w-3 h-3 rounded-sm bg-primary/90"></span>
+                        <span class="w-3 h-3 rounded-sm bg-primary"></span>
+                        <span class="w-3 h-3 rounded-sm bg-primary/30"></span>
+                      </div>
+                      <div class="flex flex-col gap-1.5">
+                        <span
+                          class="w-3 h-3 rounded-sm bg-surface-container-high"
+                        ></span>
+                        <span class="w-3 h-3 rounded-sm bg-secondary/40"></span>
+                        <span class="w-3 h-3 rounded-sm bg-secondary/80"></span>
+                        <span class="w-3 h-3 rounded-sm bg-secondary"></span>
+                      </div>
+                      <div class="flex flex-col gap-1.5">
+                        <span class="w-3 h-3 rounded-sm bg-primary/60"></span>
+                        <span
+                          class="w-3 h-3 rounded-sm bg-surface-container-high"
+                        ></span>
+                        <span class="w-3 h-3 rounded-sm bg-primary/90"></span>
+                        <span class="w-3 h-3 rounded-sm bg-primary/50"></span>
+                      </div>
+                      <div class="flex flex-col gap-1.5">
+                        <span class="w-3 h-3 rounded-sm bg-secondary/50"></span>
+                        <span class="w-3 h-3 rounded-sm bg-secondary"></span>
+                        <span class="w-3 h-3 rounded-sm bg-secondary/30"></span>
+                        <span
+                          class="w-3 h-3 rounded-sm bg-surface-container-high"
+                        ></span>
+                      </div>
+                      <div class="flex flex-col gap-1.5">
+                        <span class="w-3 h-3 rounded-sm bg-primary/20"></span>
+                        <span class="w-3 h-3 rounded-sm bg-primary/70"></span>
+                        <span class="w-3 h-3 rounded-sm bg-primary"></span>
+                        <span class="w-3 h-3 rounded-sm bg-primary/80"></span>
+                      </div>
+                      <div class="flex flex-col gap-1.5">
+                        <span class="w-3 h-3 rounded-sm bg-secondary/70"></span>
+                        <span
+                          class="w-3 h-3 rounded-sm bg-surface-container-high"
+                        ></span>
+                        <span class="w-3 h-3 rounded-sm bg-secondary/90"></span>
+                        <span class="w-3 h-3 rounded-sm bg-secondary/60"></span>
+                      </div>
+                      <div class="flex flex-col gap-1.5">
+                        <span class="w-3 h-3 rounded-sm bg-primary/50"></span>
+                        <span class="w-3 h-3 rounded-sm bg-primary/90"></span>
+                        <span
+                          class="w-3 h-3 rounded-sm bg-surface-container-high"
+                        ></span>
+                        <span class="w-3 h-3 rounded-sm bg-primary"></span>
+                      </div>
+                      <div class="flex flex-col gap-1.5">
+                        <span class="w-3 h-3 rounded-sm bg-secondary/40"></span>
+                        <span class="w-3 h-3 rounded-sm bg-secondary/80"></span>
+                        <span class="w-3 h-3 rounded-sm bg-secondary"></span>
+                        <span
+                          class="w-3 h-3 rounded-sm bg-surface-container-high"
+                        ></span>
+                      </div>
+                      <div class="flex flex-col gap-1.5">
+                        <span class="w-3 h-3 rounded-sm bg-primary/30"></span>
+                        <span
+                          class="w-3 h-3 rounded-sm bg-surface-container-high"
+                        ></span>
+                        <span class="w-3 h-3 rounded-sm bg-primary/80"></span>
+                        <span class="w-3 h-3 rounded-sm bg-primary/60"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Featured Testimonial Quote -->
+                <div
+                  class="mt-6 pt-5 bg-surface-container/60 -mx-4 -mb-4 p-5 rounded-b-lg"
+                >
+                  <p
+                    class="font-body-lg text-body-lg text-on-surface italic leading-relaxed"
+                  >
+                    “Alex brings rare dual competence in complex backend
+                    architecture and pixel-perfect design polish. He transformed
+                    our core pipeline from day one.”
+                  </p>
+                  <div class="flex items-center justify-between mt-3">
+                    <div class="flex items-center gap-3">
+                      <div
+                        class="w-8 h-8 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container font-headline-sm text-xs font-bold"
+                      >
+                        SC
+                      </div>
+                      <div>
+                        <span
+                          class="block font-headline-sm text-sm text-on-surface"
+                          >Sarah Chen</span
+                        >
+                        <span
+                          class="block font-label-code text-[11px] text-on-surface-variant"
+                          >VP Product at VectorLabs</span
+                        >
+                      </div>
+                    </div>
+                    <span class="font-label-code text-[11px] text-secondary"
+                      >Verified Reference ★★★★★</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- 3. SELECTED WORKS SECTION -->
+          <section class="py-16 scroll-mt-28" id="selected-works">
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10"
+            >
+              <div>
+                <span
+                  class="font-label-code text-label-code text-primary tracking-wider uppercase"
+                  >02 / PORTFOLIO CATALOG</span
+                >
+                <h2
+                  class="font-headline-lg text-headline-lg text-on-surface mt-1"
+                >
+                  Selected Works
+                </h2>
+                <p
+                  class="font-body-md text-body-md text-on-surface-variant mt-1"
+                >
+                  Deep dives into production web platforms, systems, and
+                  micro-tools.
+                </p>
+              </div>
+              <!-- Pill Category Filters -->
+              <div
+                class="flex flex-wrap gap-2 p-1.5 rounded-full bg-surface-container-low self-start"
+              >
+                <button
+                  class="px-4 py-1.5 rounded-full font-label-pill text-label-pill bg-primary text-on-primary transition-all cursor-pointer"
+                  id="filter-all"
+                  onclick="filterProjects('all')"
+                >
+                  All Works
+                </button>
+                <button
+                  class="px-4 py-1.5 rounded-full font-label-pill text-label-pill text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all cursor-pointer"
+                  id="filter-fullstack"
+                  onclick="filterProjects('fullstack')"
+                >
+                  Full-Stack
+                </button>
+                <button
+                  class="px-4 py-1.5 rounded-full font-label-pill text-label-pill text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all cursor-pointer"
+                  id="filter-uiux"
+                  onclick="filterProjects('uiux')"
+                >
+                  UI/UX Design
+                </button>
+                <button
+                  class="px-4 py-1.5 rounded-full font-label-pill text-label-pill text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all cursor-pointer"
+                  id="filter-systems"
+                  onclick="filterProjects('systems')"
+                >
+                  Systems
+                </button>
+              </div>
+            </div>
+            <!-- 2-Column Grid of High-Fidelity Project Cards -->
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 gap-space-lg"
+              id="projects-grid"
+            >
+              <!-- Project A: Aether OS -->
+              <div
+                class="project-card group rounded-lg bg-surface-container-low overflow-hidden transition-all duration-300 hover:shadow-2xl"
+                data-category="fullstack uiux"
+              >
+                <div class="h-64 relative bg-surface-container overflow-hidden">
+                  <img
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    data-alt="A futuristic dark mode operating system desktop interface with glassmorphism windows, interactive timeline widgets, code visualizers, deep navy and electric indigo neon accents, 8k resolution hyper realistic digital product render"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8XydwXJuNX48Cjd1NSFqh2nSdtUl2SkT5iCjyRSPA3HuNqdrp9R_ZaN0xglbIQFcbZvvH2l-uqcMf2Vt6iAO9FaPlp5T9fZiAdO1rP9oT5uKAUsErhVdAI5-fS63VH-C44cMdSA45hsMdNR69DJIOeVuFKNYPQ-qTormxetixnz7eJgNNSqxnSK3ICeTGB22eK4inxN-kJn47G7-h42J_CITufiqDpzmknrisdJ1MBT_vTfZ8BN3ILA"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"
+                  ></div>
+                  <div class="absolute top-4 left-4 flex gap-2">
+                    <span
+                      class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-code text-[11px] text-primary"
+                      >Full-Stack &amp; Design</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-code text-[11px] text-secondary"
+                      >Cloud SaaS</span
+                    >
+                  </div>
+                </div>
+                <div class="p-space-lg">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors"
+                    >
+                      Aether OS — Cloud Workflow Platform
+                    </h3>
+                    <a
+                      class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-colors cursor-pointer"
+                      href="javascript:void(0)"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >north_east</span
+                      >
+                    </a>
+                  </div>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed"
+                  >
+                    Browser-based virtual cloud orchestration workspace allowing
+                    distributed software teams to test microservices with
+                    interactive node graphs.
+                  </p>
+                  <div
+                    class="flex items-center justify-between pt-4 bg-surface-container-high/30 -mx-space-lg -mb-space-lg px-space-lg py-4"
+                  >
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="font-label-code text-[11px] text-on-surface-variant"
+                        >Next.js</span
+                      >
+                      <span class="text-on-surface-variant/40">•</span>
+                      <span
+                        class="font-label-code text-[11px] text-on-surface-variant"
+                        >WebAssembly</span
+                      >
+                      <span class="text-on-surface-variant/40">•</span>
+                      <span
+                        class="font-label-code text-[11px] text-on-surface-variant"
+                        >Tailwind</span
+                      >
+                    </div>
+                    <span class="font-label-code text-[11px] text-primary"
+                      >View Case Study →</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Project B: Krypton Pay -->
+              <div
+                class="project-card group rounded-lg bg-surface-container-low overflow-hidden transition-all duration-300 hover:shadow-2xl"
+                data-category="fullstack systems"
+              >
+                <div class="h-64 relative bg-surface-container overflow-hidden">
+                  <img
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    data-alt="High density fintech crypto dashboard interface on dark slate background showing currency exchange tables, real time candlestick charts, and glowing emerald transfer confirmation modals, sleek professional UI design"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAICExJVgdVRL2ZV8rnJPPJF5wZ60rzqIc7Jih0W-AwrC-xlzPJ9Kivx2I1cRr6j0FYBEEe8GWU4LwSR4izXD4W_NJiJlH25ACdkzRYOgAb7qNt9Wng9R0OzdQf0dNLH53G83xgT9KF0_pIEpg_CSUm_PBWBmi3C4Eqvvyk0LrEDD0v6fNV4gqUbc6w76opezVaMFeLp0UCwrLeMiL4mCwF9RnBQXUk0FEMGeIM2f9SlrR7RI9jOziepg"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"
+                  ></div>
+                  <div class="absolute top-4 left-4 flex gap-2">
+                    <span
+                      class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-code text-[11px] text-primary"
+                      >Fintech &amp; Design System</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-code text-[11px] text-tertiary"
+                      >Multi-Currency</span
+                    >
+                  </div>
+                </div>
+                <div class="p-space-lg">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors"
+                    >
+                      Krypton Pay — Cross-Border Treasury
+                    </h3>
+                    <a
+                      class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-colors cursor-pointer"
+                      href="javascript:void(0)"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >north_east</span
+                      >
+                    </a>
+                  </div>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed"
+                  >
+                    Multi-signature settlement rail for fast international
+                    transactions. Engineered low-latency WebSocket pricing
+                    engine and accessible dark token library.
+                  </p>
+                  <div
+                    class="flex items-center justify-between pt-4 bg-surface-container-high/30 -mx-space-lg -mb-space-lg px-space-lg py-4"
+                  >
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="font-label-code text-[11px] text-on-surface-variant"
+                        >TypeScript</span
+                      >
+                      <span class="text-on-surface-variant/40">•</span>
+                      <span
+                        class="font-label-code text-[11px] text-on-surface-variant"
+                        >Solidity</span
+                      >
+                      <span class="text-on-surface-variant/40">•</span>
+                      <span
+                        class="font-label-code text-[11px] text-on-surface-variant"
+                        >FastAPI</span
+                      >
+                    </div>
+                    <span class="font-label-code text-[11px] text-primary"
+                      >View Case Study →</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Project C: Pulse Engine -->
+              <div
+                class="project-card group rounded-lg bg-surface-container-low overflow-hidden transition-all duration-300 hover:shadow-2xl"
+                data-category="systems"
+              >
+                <div class="h-64 relative bg-surface-container overflow-hidden">
+                  <img
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    data-alt="Technical telemetry analytics monitor interface with dynamic multi-colored audio-frequency spectrum analyzer, server health radar graphs, and dark obsidian glass control console, high technology aesthetic"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuASFedO-rD1CrP4Ra3wjgTCOWj0ixuR2pQhb3wp-cJr-vlUOXmZjX7uHugLIUW8AL5pw2G3J0FzBvPVWYWKwBdQKzCRI3R_Vs_xFmpVAFIKXPjiTUF-BIau9or057a2enV_gYrq-q_DSLHhG-saHQHVlfNUbPhkFf4uxvZoW7qaERcYI3P0uLh7zZWBgGF8RRzo_yrzOWyvmpGgSKHkmuHg5DCU4t9tg6Oxu7bO_bOcPpHDdNXr6nogVQ"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"
+                  ></div>
+                  <div class="absolute top-4 left-4 flex gap-2">
+                    <span
+                      class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-code text-[11px] text-secondary"
+                      >Data &amp; Telemetry</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-code text-[11px] text-primary"
+                      >High-Throughput</span
+                    >
+                  </div>
+                </div>
+                <div class="p-space-lg">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors"
+                    >
+                      Pulse Engine — Telemetry Visualizer
+                    </h3>
+                    <a
+                      class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-colors cursor-pointer"
+                      href="javascript:void(0)"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >north_east</span
+                      >
+                    </a>
+                  </div>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed"
+                  >
+                    Industrial edge device observability console processing 1.2M
+                    incoming event metrics per second using WebGL canvas
+                    rendering.
+                  </p>
+                  <div
+                    class="flex items-center justify-between pt-4 bg-surface-container-high/30 -mx-space-lg -mb-space-lg px-space-lg py-4"
+                  >
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="font-label-code text-[11px] text-on-surface-variant"
+                        >Three.js</span
+                      >
+                      <span class="text-on-surface-variant/40">•</span>
+                      <span
+                        class="font-label-code text-[11px] text-on-surface-variant"
+                        >Go Lang</span
+                      >
+                      <span class="text-on-surface-variant/40">•</span>
+                      <span
+                        class="font-label-code text-[11px] text-on-surface-variant"
+                        >gRPC</span
+                      >
+                    </div>
+                    <span class="font-label-code text-[11px] text-primary"
+                      >View Case Study →</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Project D: Chronos -->
+              <div
+                class="project-card group rounded-lg bg-surface-container-low overflow-hidden transition-all duration-300 hover:shadow-2xl"
+                data-category="uiux"
+              >
+                <div class="h-64 relative bg-surface-container overflow-hidden">
+                  <img
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    data-alt="Minimalist typography focused productivity app user interface on an elegant dark charcoal surface, showing a sleek circular progress timer, session stats, and subtle tactile buttons with glowing highlights"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkxNIuoYv95uSWKC2y938j2dlwdYEkuIXXET7Ixoa_IayuG1UZ7HjVINQmVpjYhKu6QtJ6TJaM7sxS_KmDbq73Omt5G6j0jg05zDj0VlC_HHeS_yLxlbC0-Z6r90MNtnygKwSWiwoUVqXrk_6oOa9Fa4i0uAoQdoqXgEWMEM8jnwaahWzk3WVPXDIlpjSwAOHsnrNRBay6--_ewzbguxg7UjzPmHSyJVL1wtihHQ3tfyye6I1oqgu-HA"
+                  />
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-surface-container-low via-transparent to-transparent"
+                  ></div>
+                  <div class="absolute top-4 left-4 flex gap-2">
+                    <span
+                      class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-code text-[11px] text-tertiary"
+                      >Micro-SaaS &amp; UI</span
+                    >
+                    <span
+                      class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-code text-[11px] text-primary"
+                      >15k Active Users</span
+                    >
+                  </div>
+                </div>
+                <div class="p-space-lg">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3
+                      class="font-headline-md text-headline-md text-on-surface group-hover:text-primary transition-colors"
+                    >
+                      Chronos — Minimalist Focus Suite
+                    </h3>
+                    <a
+                      class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-colors cursor-pointer"
+                      href="javascript:void(0)"
+                    >
+                      <span class="material-symbols-outlined text-[18px]"
+                        >north_east</span
+                      >
+                    </a>
+                  </div>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant mb-6 leading-relaxed"
+                  >
+                    Distraction-free Pomodoro ecosystem pairing native desktop
+                    shortcuts, haptic notifications, and automated ambient audio
+                    synthesis.
+                  </p>
+                  <div
+                    class="flex items-center justify-between pt-4 bg-surface-container-high/30 -mx-space-lg -mb-space-lg px-space-lg py-4"
+                  >
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="font-label-code text-[11px] text-on-surface-variant"
+                        >Tauri</span
+                      >
+                      <span class="text-on-surface-variant/40">•</span>
+                      <span
+                        class="font-label-code text-[11px] text-on-surface-variant"
+                        >SvelteKit</span
+                      >
+                      <span class="text-on-surface-variant/40">•</span>
+                      <span
+                        class="font-label-code text-[11px] text-on-surface-variant"
+                        >Rust</span
+                      >
+                    </div>
+                    <span class="font-label-code text-[11px] text-primary"
+                      >View Case Study →</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- 4. CONVERSATIONAL CONTACT & FOOTER SECTION -->
+          <section class="py-20 scroll-mt-28" id="contact">
+            <div
+              class="relative rounded-xl bg-gradient-to-b from-surface-container to-surface-container-low p-space-lg md:p-space-xl overflow-hidden shadow-2xl"
+            >
+              <!-- Background Lighting Accent -->
+              <div
+                class="absolute -bottom-24 -right-24 w-80 h-80 bg-primary-container/20 rounded-full blur-3xl pointer-events-none"
+              ></div>
+              <div class="max-w-3xl relative z-10">
+                <span
+                  class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high font-label-code text-label-code text-secondary mb-4"
+                >
+                  <span>READY TO ENGAGE</span>
+                </span>
+                <h2
+                  class="font-headline-lg text-headline-lg text-on-surface md:text-[42px] md:leading-[50px] font-bold tracking-tight"
+                >
+                  Have an ambitious project in mind? Let’s build something
+                  exceptional together.
+                </h2>
+                <p
+                  class="font-body-lg text-body-lg text-on-surface-variant mt-4 max-w-xl"
+                >
+                  Whether you need a dedicated senior full-stack engineer, a
+                  design system overhaul, or architectural advising for your
+                  next product cycle.
+                </p>
+                <!-- Email Action Hub -->
+                <div class="mt-8 flex flex-wrap items-center gap-4">
+                  <button
+                    class="group inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-primary-container text-on-primary-container font-label-pill text-label-pill font-semibold hover:bg-primary hover:text-on-primary shadow-[0_0_20px_rgba(128,131,255,0.35)] transition-all cursor-pointer active:scale-95"
+                    id="copy-email-btn"
+                    onclick="copyEmailAddress(this)"
+                  >
+                    <span
+                      class="material-symbols-outlined text-[18px]"
+                      id="email-icon"
+                      >content_copy</span
+                    >
+                    <span id="email-text">hello@alexvance.dev</span>
+                  </button>
+                  <a
+                    class="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-surface-container-highest text-on-surface font-label-pill text-label-pill hover:bg-surface-bright transition-all cursor-pointer active:scale-95"
+                    href="mailto:hello@alexvance.dev"
+                  >
+                    <span>Send Direct Email</span>
+                    <span class="material-symbols-outlined text-[18px]"
+                      >send</span
+                    >
+                  </a>
+                </div>
+                <!-- Social Matrix & Timezone Bar -->
+                <div
+                  class="mt-12 pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 bg-surface-container-lowest/60 -mx-space-lg -mb-space-lg md:-mx-space-xl md:-mb-space-xl p-space-lg md:px-space-xl"
+                >
+                  <div class="flex items-center gap-3">
+                    <!-- GitHub -->
+                    <a
+                      aria-label="GitHub"
+                      class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-all cursor-pointer"
+                      href="https://github.com"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <svg class="w-5 h-5 fill-current" viewbox="0 0 24 24">
+                        <path
+                          d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"
+                        ></path>
+                      </svg>
+                    </a>
+                    <!-- Twitter / X -->
+                    <a
+                      aria-label="X Twitter"
+                      class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-all cursor-pointer"
+                      href="https://twitter.com"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+                        <path
+                          d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                        ></path>
+                      </svg>
+                    </a>
+                    <!-- LinkedIn -->
+                    <a
+                      aria-label="LinkedIn"
+                      class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-all cursor-pointer"
+                      href="https://linkedin.com"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+                        <path
+                          d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                        ></path>
+                      </svg>
+                    </a>
+                    <!-- Dribbble -->
+                    <a
+                      aria-label="Dribbble"
+                      class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-primary-container hover:text-on-primary-container transition-all cursor-pointer"
+                      href="https://dribbble.com"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <svg class="w-4 h-4 fill-current" viewbox="0 0 24 24">
+                        <path
+                          d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm10.166 10.467c-.276-.02-.55-.03-.824-.03-2.602 0-5.02.73-7.078 1.995-.494-1.026-1.045-2.032-1.656-3.011 3.52-1.542 6.069-4.382 7.085-7.854 1.54 2.474 2.455 5.398 2.473 8.9zm-4.716-10.02c-.93 3.253-3.277 5.922-6.529 7.422-.962-1.83-2.062-3.565-3.29-5.187 1.838-1.08 3.987-1.705 6.289-1.705 1.258 0 2.47.195 3.53.47zm-11.897 3.324c1.196 1.579 2.266 3.267 3.204 5.044-3.513 1.054-7.234 1.341-8.757 1.393.754-2.793 2.502-5.158 5.553-6.437zm-5.553 8.229c1.67-.058 5.753-.38 9.57-1.564.444.869.852 1.758 1.22 2.662-4.103 2.766-6.852 7.34-7.148 12.569-2.222-2.39-3.582-5.578-3.642-9.083zm8.398 10.428c.368-4.773 2.87-8.995 6.643-11.597.902 2.378 1.577 4.887 2.007 7.485-2.663 2.05-5.698 3.42-8.65 4.112zm10.584-3.153c-.417-2.42-1.053-4.764-1.895-6.994 1.884-1.127 4.077-1.776 6.425-1.795-.27 3.398-1.834 6.433-4.53 8.789z"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                  <!-- Timezone Pill -->
+                  <div
+                    class="flex items-center gap-2 font-label-code text-label-code text-on-surface-variant"
+                  >
+                    <span class="w-2 h-2 rounded-full bg-secondary"></span>
+                    <span>Available Globally • UTC-7 (San Francisco)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer
+      class="w-full bg-surface-container-lowest/80 border-t border-outline-variant/30 py-space-lg mt-auto"
+    >
+      <div
+        class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-space-md text-on-surface-variant font-label-pill text-label-pill"
+      >
+        <div class="flex items-center gap-space-sm">
+          <span
+            class="inline-flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-secondary/10 border border-secondary/25 text-secondary"
+            ><span
+              class="w-2 h-2 rounded-full bg-secondary animate-pulse"
+            ></span
+            >Available for new opportunities</span
+          >
+        </div>
+        <div class="flex items-center gap-space-lg">
+          <span class="font-label-code text-label-code text-on-surface-variant"
+            >© 2025 Hybrid Engineer &amp; Designer</span
+          ><a
+            class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer"
+            data-path="contact"
+            href="#contact"
+            >Inquire</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
